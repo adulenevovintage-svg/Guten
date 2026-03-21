@@ -653,7 +653,7 @@ const Contact = ({ lang }: { lang: Language }) => {
                 </div>
                 <div>
                   <p className="text-xs font-display font-bold tracking-widest text-charcoal/40 uppercase mb-1">{t.email}</p>
-                  <p className="text-lg font-display font-bold text-primary">genanewgebremariam@gmail.com</p>
+                  <p className="text-lg font-display font-bold text-primary">gutneresha@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -790,7 +790,7 @@ const Footer = ({ lang }: { lang: Language }) => {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
-                <span>genanewgebremariam@gmail.com</span>
+                <span>gutneresha@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
