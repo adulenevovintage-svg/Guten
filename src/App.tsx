@@ -49,8 +49,8 @@ const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Language) => v
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'glass-nav py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <div className="h-12 w-12 overflow-hidden rounded-sm">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="h-10 w-10 sm:h-12 sm:w-12 overflow-hidden rounded-sm">
             <img 
               src="https://image2url.com/r2/default/images/1774091331633-f0f105cc-b8b8-4d0d-8a37-14697e9e78de.jpeg" 
               alt="Guten Logo" 
@@ -59,8 +59,8 @@ const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Language) => v
             />
           </div>
           <div className="flex flex-col">
-            <span className={`font-display font-bold text-lg leading-none ${isScrolled ? 'text-primary' : 'text-white'}`}>GUTEN</span>
-            <span className={`font-display text-[10px] tracking-[0.2em] ${isScrolled ? 'text-charcoal/60' : 'text-white/70'}`}>AGRI-TRADING</span>
+            <span className={`font-display font-bold text-base sm:text-lg leading-none ${isScrolled ? 'text-primary' : 'text-white'}`}>GUTEN</span>
+            <span className={`font-display text-[8px] sm:text-[10px] tracking-[0.2em] ${isScrolled ? 'text-charcoal/60' : 'text-white/70'}`}>AGRI-TRADING</span>
           </div>
         </div>
 
@@ -96,23 +96,23 @@ const Navbar = ({ lang, setLang }: { lang: Language, setLang: (l: Language) => v
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 lg:hidden">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
+          <div className="flex items-center gap-1 sm:gap-2">
             <button 
               onClick={() => setLang('en')}
-              className={`text-xs font-display font-bold px-2 py-1 rounded-sm ${lang === 'en' ? 'bg-accent text-primary' : (isScrolled ? 'text-charcoal' : 'text-white')}`}
+              className={`text-[10px] sm:text-xs font-display font-bold px-1.5 py-1 rounded-sm ${lang === 'en' ? 'bg-accent text-primary' : (isScrolled ? 'text-charcoal' : 'text-white')}`}
             >
               EN
             </button>
             <button 
               onClick={() => setLang('am')}
-              className={`text-xs font-display font-bold px-2 py-1 rounded-sm ${lang === 'am' ? 'bg-accent text-primary' : (isScrolled ? 'text-charcoal' : 'text-white')}`}
+              className={`text-[10px] sm:text-xs font-display font-bold px-1.5 py-1 rounded-sm ${lang === 'am' ? 'bg-accent text-primary' : (isScrolled ? 'text-charcoal' : 'text-white')}`}
             >
               አማ
             </button>
           </div>
           <button 
-            className="text-white"
+            className="text-white p-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className={isScrolled ? 'text-primary' : 'text-white'} /> : <Menu className={isScrolled ? 'text-primary' : 'text-white'} />}
@@ -228,7 +228,7 @@ const About = ({ lang }: { lang: Language }) => {
             <p>{t.p2}</p>
             <p>{t.p3}</p>
           </div>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-gray-100 pt-12">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 border-t border-gray-100 pt-12">
             <div>
               <p className="font-display font-bold text-primary text-3xl mb-2">20+</p>
               <p className="text-xs font-display font-bold tracking-widest text-accent uppercase">{t.stats.experience}</p>
@@ -677,7 +677,7 @@ const Contact = ({ lang }: { lang: Language }) => {
             </div>
           </div>
 
-          <div className="bg-white p-10 md:p-12 shadow-2xl rounded-sm border border-gray-100">
+          <div className="bg-white p-6 sm:p-10 md:p-12 shadow-2xl rounded-sm border border-gray-100">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -804,7 +804,7 @@ const Footer = ({ lang }: { lang: Language }) => {
           <p className="text-xs text-white/40 tracking-widest uppercase">
             © {new Date().getFullYear()} Guten Agricultural Farm and Trading. {t.rights}
           </p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             <button 
               onClick={() => setShowPrivacy(true)}
               className="text-xs text-white/40 hover:text-white transition-colors uppercase tracking-widest"
