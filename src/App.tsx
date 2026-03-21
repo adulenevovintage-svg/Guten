@@ -662,7 +662,7 @@ const Contact = ({ lang }: { lang: Language }) => {
                 </div>
                 <div>
                   <p className="text-xs font-display font-bold tracking-widest text-charcoal/40 uppercase mb-1">{t.call}</p>
-                  <p className="text-lg font-display font-bold text-primary">+251 911224995 / +251 948033333</p>
+                  <p className="text-lg font-display font-bold text-primary">+251 911224995</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -794,7 +794,7 @@ const Footer = ({ lang }: { lang: Language }) => {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
-                <span>+251 911224995 / +251 948033333</span>
+                <span>+251 911224995</span>
               </li>
             </ul>
           </div>
