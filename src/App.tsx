@@ -870,68 +870,25 @@ const Footer = ({ lang }: { lang: Language }) => {
   );
 };
 
-// --- Video Intro Component ---
-
-const VideoIntro = ({ onFinished }: { onFinished: () => void, key?: string }) => {
-  return (
-    <motion.div 
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-      className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
-    >
-      <video 
-        autoPlay 
-        muted 
-        playsInline 
-        onEnded={onFinished}
-        className="w-full h-full object-cover"
-      >
-        <source src="https://pub-1407f82391df4ab1951418d04be76914.r2.dev/uploads/89e6fbc2-c312-44ae-b9da-43396bd6b84b.mp4" type="video/mp4" />
-      </video>
-      <button 
-        onClick={onFinished}
-        className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 text-white/50 hover:text-white text-[10px] sm:text-xs tracking-widest uppercase transition-colors z-10 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10"
-      >
-        Skip Intro
-      </button>
-    </motion.div>
-  );
-};
-
 // --- Main App ---
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
-  const [showIntro, setShowIntro] = useState(true);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
-      <AnimatePresence mode="wait">
-        {showIntro ? (
-          <VideoIntro key="intro" onFinished={() => setShowIntro(false)} />
-        ) : (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <Navbar lang={lang} setLang={setLang} />
-            <Hero lang={lang} />
-            <About lang={lang} />
-            <FarmLocations lang={lang} />
-            <Products lang={lang} />
-            <Equipment lang={lang} />
-            <Services lang={lang} />
-            <WhyChooseUs lang={lang} />
-            <Vision lang={lang} />
-            <Gallery lang={lang} />
-            <Contact lang={lang} />
-            <Footer lang={lang} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Navbar lang={lang} setLang={setLang} />
+      <Hero lang={lang} />
+      <About lang={lang} />
+      <FarmLocations lang={lang} />
+      <Products lang={lang} />
+      <Equipment lang={lang} />
+      <Services lang={lang} />
+      <WhyChooseUs lang={lang} />
+      <Vision lang={lang} />
+      <Gallery lang={lang} />
+      <Contact lang={lang} />
+      <Footer lang={lang} />
     </div>
   );
 }
